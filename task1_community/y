@@ -1,0 +1,6 @@
+node_name                'y'
+client_key               '/home/student/chefTasks/task1_community/task1_community/y.pem'
+validation_client_name   'y'
+validation_key           '/etc/chef-server/chef-validator.pem'
+chef_server_url          'y'
+syntax_check_cache_path  '/home/student/chefTasks/task1_community/task1_community/syntax_check_cache'
