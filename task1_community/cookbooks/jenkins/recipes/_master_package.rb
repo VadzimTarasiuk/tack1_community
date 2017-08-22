@@ -45,9 +45,8 @@ when 'rhel'
 end
 
 package 'jenkins' do
-  
-  action :install
-  
+  version node['jenkins']['master']['version']
+  timeout 9999
 end
 
 directory node['jenkins']['master']['home'] do
