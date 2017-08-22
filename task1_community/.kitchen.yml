@@ -1,9 +1,13 @@
 ---
 driver:
   name: vagrant
-  network:    
-    - ["private_network", {ip: "12.11.12.11"}]
-    - ["forwarded_port", {guest: 80, host: 9999}]
+  network:
+    - - private_network
+      - ip: 12.11.12.11
+    - - forwarded_port
+      - guest: 8080
+        host: 9090
+        auto_correct: true
 
 provisioner:
   name: chef_zero
@@ -22,6 +26,7 @@ suites:
   - name: default
     run_list:
       - recipe[task1_community::default]
+      - recipe[jenkins::master]
     verifier:
       inspec_tests:
         - test/smoke/default
